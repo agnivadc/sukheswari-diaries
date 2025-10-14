@@ -152,48 +152,14 @@ export default function FutureDreams() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-foreground">
-          Our Future
-        </h2>
-        <p className="text-center text-foreground/80 mb-12 text-lg">
-          Dreams we'll make come true
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
+        <p className="text-2xl md:text-3xl font-script text-foreground mb-4">
+          Someday soon, no countdowns —
         </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {dreams.map((dream, index) => (
-            <div
-              key={dream.id}
-              className="bg-background/90 backdrop-blur-sm rounded-md p-6 border border-border/50 hover-elevate active-elevate-2 transition-all"
-              style={{
-                animation: "slideUp 0.6s ease-out forwards",
-                animationDelay: `${index * 0.1}s`,
-                opacity: 0,
-              }}
-              data-testid={`dream-card-${dream.id}`}
-            >
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-4">
-                {dream.icon}
-              </div>
-              <h3 className="text-lg font-serif font-bold text-foreground mb-2">
-                {dream.title}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {dream.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <p className="text-2xl md:text-3xl font-script text-foreground mb-4">
-            Someday soon, no countdowns —
-          </p>
-          <p className="text-2xl md:text-3xl font-script text-foreground">
-            just us, together.
-          </p>
-          <Heart className="w-12 h-12 text-primary fill-primary mx-auto mt-8 animate-heartbeat" />
-        </div>
+        <p className="text-2xl md:text-3xl font-script text-foreground">
+          just us, together.
+        </p>
+        <Heart className="w-12 h-12 text-primary fill-primary mx-auto mt-8 animate-heartbeat" />
       </div>
     </div>
   );
