@@ -1,0 +1,97 @@
+Build a scrollable, interactive, romantic web app called “From Bumble to Forever”, celebrating a long-distance love story and her 28th birthday. The app should feel artsy, architecturally inspired, and creative, perfect for an architect/urban planner aesthetic.
+
+🎨 Theme & Aesthetic
+
+Architectural / urban planner vibe: clean lines, geometric shapes, grids, subtle parallax, minimalistic yet artistic.
+
+Pastel & soft colors: blush pink, lavender, soft blues, soft gold accents.
+
+Fonts: elegant serif + handwritten/script for romantic vibe.
+
+Animations: scroll-driven, parallax, floating elements (hearts, balloons, geometric shapes, stars), micro-interactions (hover sparkles, confetti bursts).
+
+Extra creativity: animated skyline silhouettes combining Dublin + Guwahati + Jorhat, floating “28” balloons, subtle particle effects for magic.
+
+🌟 Sections (scrollable, 4–5)
+
+1️⃣ Hero / Birthday Greeting
+
+Full-screen gradient + subtle geometric shapes.
+
+Animated text: “Happy 28th Birthday, my love! ❤️ From Bumble to Forever”.
+
+Floating hearts, soft sparkles, gentle geometric animations (lines, rectangles, circles).
+
+Optional interactive click: hearts or confetti burst when clicked.
+
+2️⃣ Journey Timeline / Map Section
+
+Scrollable milestones: Bumble → Dublin → Guwahati → Jorhat → Future.
+
+Each milestone has:
+
+Icon or mini illustration (chat bubble, airplane, skyline, home)
+
+Short romantic description
+
+Small animation on scroll (fade-in, slide-up, parallax)
+
+Optional interactive map connecting milestones with animated arcs or lines.
+
+3️⃣ Memory Cards / Moments Section
+
+Cards highlighting LDR moments: first call, first meeting, long-distance laughs, favorite texts.
+
+Scroll animation: cards pop, flip, or sparkle.
+
+Optional hidden “Easter eggs”: click a heart to reveal a secret mini-message or memory.
+
+4️⃣ Birthday Celebration Section
+
+Centerpiece: large animated “Happy 28th Birthday!” with balloons floating around.
+
+Subtext: “From Dublin to Jorhat, with all my love ❤️”.
+
+Confetti, particle effects, floating hearts.
+
+Interactive: balloons or hearts respond to cursor movement.
+
+5️⃣ Future Dreams / Skyline Section
+
+Parallax city skylines blending Dublin + Guwahati + Jorhat.
+
+Icons or illustrations for shared dreams: trips, home, adventures, milestones.
+
+Soft pastel sky, clouds, stars; gentle motion as user scrolls.
+
+Final romantic message: “Someday soon, no countdowns — just us, together.”
+
+🧠 Technical Requirements
+
+React + TailwindCSS (+ optional Framer Motion for scroll/animations)
+
+Fully responsive, scrollable, mobile-friendly
+
+Functional components, hooks
+
+Optional mock data for memories and easter eggs
+
+Interactive, artsy, architecturally inspired, romantic vibe
+
+✨ Special Details / Easter Eggs
+
+Floating “28” balloons throughout the app, animated with CSS or motion.
+
+Clickable hearts reveal hidden mini messages or emojis.
+
+Skyline silhouettes combine the architecture of Dublin, Guwahati, Jorhat.
+
+Soft scroll-triggered animations: hearts, stars, confetti bursts.
+
+Small floating geometric shapes reflecting urban planner/architect aesthetic.
+
+💌 Footer
+
+Text: “Built with love — from Dublin to Jorhat 💞”
+
+Optional small animated heart icon
