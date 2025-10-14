@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Plane, Home, Camera, MapPin, Heart } from "lucide-react";
+import { Plane, Home, Camera, MapPin, Heart, Building2, Compass, Palette, Coffee } from "lucide-react";
 
 interface Dream {
   id: string;
@@ -10,28 +10,52 @@ interface Dream {
 
 const dreams: Dream[] = [
   {
-    id: "travel",
-    icon: <Plane className="w-6 h-6" />,
-    title: "Adventures Together",
-    description: "Exploring the world, hand in hand",
+    id: "home-design",
+    icon: <Building2 className="w-6 h-6" />,
+    title: "Designing Our Home",
+    description: "Sketching our dream space together, room by room",
   },
   {
-    id: "home",
+    id: "city-adventures",
+    icon: <Compass className="w-6 h-6" />,
+    title: "Exploring Architecture",
+    description: "Wandering cities, admiring buildings, and finding inspiration",
+  },
+  {
+    id: "creative-projects",
+    icon: <Palette className="w-6 h-6" />,
+    title: "Creative Collaborations",
+    description: "Your vision, our love story - built together",
+  },
+  {
+    id: "cafe-planning",
+    icon: <Coffee className="w-6 h-6" />,
+    title: "Cozy Coffee Mornings",
+    description: "Planning our future over endless cups of coffee",
+  },
+  {
+    id: "travel",
+    icon: <Plane className="w-6 h-6" />,
+    title: "Urban Adventures",
+    description: "From Dublin's Georgian doors to Guwahati's charm",
+  },
+  {
+    id: "forever-home",
     icon: <Home className="w-6 h-6" />,
-    title: "Our Home",
-    description: "A place that's ours, filled with love",
+    title: "Our Forever Place",
+    description: "Where every detail tells our story",
   },
   {
     id: "memories",
     icon: <Camera className="w-6 h-6" />,
-    title: "Making Memories",
-    description: "Every day a new story to tell",
+    title: "Capturing Moments",
+    description: "Building a portfolio of us",
   },
   {
     id: "places",
     icon: <MapPin className="w-6 h-6" />,
-    title: "New Places",
-    description: "Creating magic wherever we go",
+    title: "New Discoveries",
+    description: "Every street, every city - together",
   },
 ];
 
@@ -136,11 +160,11 @@ export default function FutureDreams() {
           Dreams we'll make come true
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {dreams.map((dream, index) => (
             <div
               key={dream.id}
-              className="bg-background/80 backdrop-blur-sm rounded-md p-6 hover-elevate active-elevate-2 transition-all"
+              className="bg-background/90 backdrop-blur-sm rounded-md p-6 border border-border/50 hover-elevate active-elevate-2 transition-all"
               style={{
                 animation: "slideUp 0.6s ease-out forwards",
                 animationDelay: `${index * 0.1}s`,
