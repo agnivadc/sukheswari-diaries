@@ -106,39 +106,65 @@ export default function OurStory() {
             <span className="text-xs font-mono text-muted-foreground">PROJECT: CONNECTION</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-2">
-            Our Journey & Memories
+            Our Journey and Memory
           </h2>
           <p className="text-muted-foreground text-lg mb-2">
             Gratitude for the chance encounters that shaped us
           </p>
         </div>
 
-        {/* Architectural Illustration */}
+        {/* Architectural Illustration - 4 Cities */}
         <div className="mb-12 relative">
-          <div className="flex justify-center gap-8 items-end opacity-20">
-            {/* Dublin Skyline Silhouette */}
+          <div className="flex justify-center gap-4 items-end opacity-20">
+            {/* Dublin Skyline */}
             <div className="text-center">
-              <svg width="120" height="80" viewBox="0 0 120 80" className="mx-auto mb-2">
-                <rect x="10" y="40" width="15" height="40" fill="currentColor" className="text-primary" />
-                <rect x="30" y="30" width="20" height="50" fill="currentColor" className="text-primary" />
-                <rect x="55" y="35" width="18" height="45" fill="currentColor" className="text-primary" />
-                <rect x="78" y="45" width="15" height="35" fill="currentColor" className="text-primary" />
-                <rect x="98" y="50" width="12" height="30" fill="currentColor" className="text-primary" />
+              <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-2">
+                <rect x="8" y="30" width="12" height="30" fill="currentColor" className="text-primary" />
+                <rect x="24" y="22" width="15" height="38" fill="currentColor" className="text-primary" />
+                <rect x="43" y="26" width="13" height="34" fill="currentColor" className="text-primary" />
+                <rect x="60" y="32" width="10" height="28" fill="currentColor" className="text-primary" />
               </svg>
               <span className="text-xs font-mono text-muted-foreground">Dublin</span>
             </div>
 
             {/* Connection Line */}
-            <div className="flex-1 border-t-2 border-dashed border-primary/30 mb-8" />
+            <div className="flex-1 border-t-2 border-dashed border-primary/30 mb-6" />
 
-            {/* Jorhat Skyline Silhouette */}
+            {/* Siliguri Skyline */}
             <div className="text-center">
-              <svg width="120" height="80" viewBox="0 0 120 80" className="mx-auto mb-2">
-                <rect x="15" y="45" width="12" height="35" fill="currentColor" className="text-accent" />
-                <rect x="32" y="50" width="18" height="30" fill="currentColor" className="text-accent" />
-                <rect x="55" y="40" width="20" height="40" fill="currentColor" className="text-accent" />
-                <rect x="80" y="48" width="16" height="32" fill="currentColor" className="text-accent" />
-                <rect x="100" y="52" width="10" height="28" fill="currentColor" className="text-accent" />
+              <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-2">
+                <rect x="12" y="35" width="10" height="25" fill="currentColor" className="text-accent" />
+                <rect x="26" y="32" width="14" height="28" fill="currentColor" className="text-accent" />
+                <rect x="44" y="28" width="16" height="32" fill="currentColor" className="text-accent" />
+                <rect x="64" y="36" width="9" height="24" fill="currentColor" className="text-accent" />
+              </svg>
+              <span className="text-xs font-mono text-muted-foreground">Siliguri</span>
+            </div>
+
+            {/* Connection Line */}
+            <div className="flex-1 border-t-2 border-dashed border-primary/30 mb-6" />
+
+            {/* Guwahati Skyline */}
+            <div className="text-center">
+              <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-2">
+                <rect x="10" y="33" width="11" height="27" fill="currentColor" className="text-primary" />
+                <rect x="25" y="26" width="15" height="34" fill="currentColor" className="text-primary" />
+                <rect x="44" y="30" width="13" height="30" fill="currentColor" className="text-primary" />
+                <rect x="61" y="35" width="10" height="25" fill="currentColor" className="text-primary" />
+              </svg>
+              <span className="text-xs font-mono text-muted-foreground">Guwahati</span>
+            </div>
+
+            {/* Connection Line */}
+            <div className="flex-1 border-t-2 border-dashed border-primary/30 mb-6" />
+
+            {/* Jorhat Skyline */}
+            <div className="text-center">
+              <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-2">
+                <rect x="11" y="34" width="10" height="26" fill="currentColor" className="text-accent" />
+                <rect x="25" y="30" width="14" height="30" fill="currentColor" className="text-accent" />
+                <rect x="43" y="28" width="16" height="32" fill="currentColor" className="text-accent" />
+                <rect x="63" y="36" width="9" height="24" fill="currentColor" className="text-accent" />
               </svg>
               <span className="text-xs font-mono text-muted-foreground">Jorhat</span>
             </div>
@@ -166,15 +192,10 @@ export default function OurStory() {
                 data-testid={`card-${item.id}`}
               >
                 <CardContent className="p-6">
-                  {/* Technical Label */}
+                  {/* Icon */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex-shrink-0 w-14 h-14 rounded-md bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                       {item.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <Badge variant="outline" className="text-xs font-mono">
-                        GRATEFUL FOR
-                      </Badge>
                     </div>
                   </div>
 
