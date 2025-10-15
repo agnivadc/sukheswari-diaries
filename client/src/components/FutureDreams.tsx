@@ -61,7 +61,32 @@ const dreams: Dream[] = [
 
 export default function FutureDreams() {
   const [scrollY, setScrollY] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Countdown to November 14, 2025
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const targetDate = new Date('2025-11-14T00:00:00').getTime();
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    calculateTimeLeft();
+    const interval = setInterval(calculateTimeLeft, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -153,13 +178,50 @@ export default function FutureDreams() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto text-center">
-        <p className="text-2xl md:text-3xl font-script text-foreground mb-4">
-          Someday soon, no countdowns —
+        <p className="text-2xl md:text-3xl font-script text-foreground mb-6">
+          Landing in India Permanently
         </p>
-        <p className="text-2xl md:text-3xl font-script text-foreground">
-          just us, together.
+        <p className="text-lg md:text-xl text-foreground/80 mb-8">
+          November 14th — Fulfilling the promise, taking the first step of togetherness
         </p>
-        <Heart className="w-12 h-12 text-primary fill-primary mx-auto mt-8 animate-heartbeat" />
+
+        {/* Countdown */}
+        <div className="flex justify-center gap-4 md:gap-8 mb-8" data-testid="countdown">
+          <div className="text-center">
+            <div className="bg-background/20 backdrop-blur-sm border border-foreground/20 rounded-md px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[100px]">
+              <div className="text-3xl md:text-5xl font-bold text-foreground" data-testid="countdown-days">
+                {timeLeft.days}
+              </div>
+              <div className="text-xs md:text-sm text-foreground/70 font-mono mt-1">DAYS</div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="bg-background/20 backdrop-blur-sm border border-foreground/20 rounded-md px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[100px]">
+              <div className="text-3xl md:text-5xl font-bold text-foreground" data-testid="countdown-hours">
+                {timeLeft.hours}
+              </div>
+              <div className="text-xs md:text-sm text-foreground/70 font-mono mt-1">HOURS</div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="bg-background/20 backdrop-blur-sm border border-foreground/20 rounded-md px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[100px]">
+              <div className="text-3xl md:text-5xl font-bold text-foreground" data-testid="countdown-minutes">
+                {timeLeft.minutes}
+              </div>
+              <div className="text-xs md:text-sm text-foreground/70 font-mono mt-1">MINS</div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="bg-background/20 backdrop-blur-sm border border-foreground/20 rounded-md px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[100px]">
+              <div className="text-3xl md:text-5xl font-bold text-foreground" data-testid="countdown-seconds">
+                {timeLeft.seconds}
+              </div>
+              <div className="text-xs md:text-sm text-foreground/70 font-mono mt-1">SECS</div>
+            </div>
+          </div>
+        </div>
+
+        <Heart className="w-12 h-12 text-primary fill-primary mx-auto animate-heartbeat" />
       </div>
     </div>
   );
