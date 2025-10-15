@@ -106,7 +106,7 @@ export default function OurStory() {
             <span className="text-xs font-mono text-muted-foreground">PROJECT: CONNECTION</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-2">
-            Our Journey and Memory
+            Gratitude Wall
           </h2>
           <p className="text-muted-foreground text-lg mb-2">
             Gratitude for the chance encounters that shaped us
