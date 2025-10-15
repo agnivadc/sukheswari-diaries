@@ -1,9 +1,32 @@
-import { useState } from "react";
-import { Heart } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Heart, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   const [confetti, setConfetti] = useState<{ id: number; x: number; y: number }[]>([]);
   const [confettiId, setConfettiId] = useState(0);
+
+  // Auto-confetti burst on load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      const burst = Array.from({ length: 30 }, (_, i) => ({
+        id: i,
+        x: centerX,
+        y: centerY,
+      }));
+      
+      setConfetti(burst);
+      setConfettiId(30);
+      
+      setTimeout(() => {
+        setConfetti([]);
+      }, 1500);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClick = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -75,23 +98,38 @@ export default function HeroSection() {
       `}</style>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl">
+      <div className="relative z-10 text-center px-6 max-w-5xl">
         <div className="animate-fadeIn">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-4">
-            Happy 28th Birthday,
+          {/* Birthday Badge */}
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-primary/30 rounded-full bg-background/20 backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-mono text-foreground/80">CELEBRATING 28 YEARS</span>
+            <Sparkles className="w-4 h-4 text-primary" />
+          </div>
+
+          <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-6">
+            Happy Birthday
           </h1>
-          <h2 className="text-4xl md:text-6xl font-script text-primary mb-6">
-            my love! ❤️
+          <h2 className="text-5xl md:text-7xl font-script text-primary mb-8">
+            Sukheswari
           </h2>
-          <p className="text-2xl md:text-3xl font-serif text-foreground/80">
+          <p className="text-2xl md:text-3xl font-serif text-foreground/80 mb-6">
             From Bumble to Forever
           </p>
-        </div>
 
-        <div className="mt-12 flex gap-4 justify-center">
-          <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
-          <div className="w-3 h-3 rounded-full bg-secondary animate-pulse" style={{ animationDelay: "0.2s" }} />
-          <div className="w-3 h-3 rounded-full bg-accent animate-pulse" style={{ animationDelay: "0.4s" }} />
+          {/* Decorative Line */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <div className="w-20 h-px bg-primary/30" />
+            <Heart className="w-6 h-6 text-primary fill-primary" />
+            <div className="w-20 h-px bg-primary/30" />
+          </div>
+
+          {/* Coordinates */}
+          <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center items-center text-sm font-mono text-foreground/60">
+            <span>Dublin: 53.3498° N, 6.2603° W</span>
+            <span className="hidden md:inline">•</span>
+            <span>Jorhat: 26.7509° N, 94.2037° E</span>
+          </div>
         </div>
       </div>
     </div>
