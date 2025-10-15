@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import JourneyTimeline from "@/components/JourneyTimeline";
+import PhotoGallery from "@/components/PhotoGallery";
 import MemoryCards from "@/components/MemoryCards";
 import BirthdayCelebration from "@/components/BirthdayCelebration";
 import FutureDreams from "@/components/FutureDreams";
@@ -10,6 +11,7 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <JourneyTimeline />
+      <PhotoGallery />
       <MemoryCards />
       <BirthdayCelebration />
       <FutureDreams />
