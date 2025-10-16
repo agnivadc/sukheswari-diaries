@@ -1,0 +1,38 @@
+Build a React + TailwindCSS web page section titled “The Girl Doll Chapter” as part of a romantic, personal birthday webapp.
+
+The aesthetic should feel like a cozy architect’s studio — soft blush, ivory, and golden tones, warm lighting, and a sense of quiet affection.
+
+The background should look like a soft watercolor sketchpad, with faint pencil outlines of Dublin and Jorhat skylines fading into view near the edges.
+
+In the center, create a floating white card with rounded corners, subtle glassmorphism (light blur and transparency), and a delicate drop shadow — as if placed gently on her design desk.
+
+Inside the card, place this message with smooth fade-up animations for each paragraph as the user scrolls:
+
+Hey girl doll,
+
+Happy 28th, my favorite human. You’ve somehow managed to make even pixels and time zones feel warm.
+
+I still remember that first Bumble chat — how I thought I was just swiping right, but turns out I was sketching the first line of something I’d want to keep forever.
+
+You’ve got this mix of calm and chaos that only an architect could pull off — spreadsheets and skylines, sketches and soft hearts. You make cities feel like home, and you make me want to build a life worth sharing walls with you in.
+
+I hope 28 brings you the same joy you’ve quietly given me — steady, thoughtful, and a little bit magic.
+
+
+Add a small, elegant header above the message:
+
+“The Girl Doll Chapter · 28”
+
+Use a serif font for the title (like Playfair Display) and a warm sans-serif (like Inter) for the body.
+
+Add soft golden glows or light rays across the card, shifting gently like sunlight through studio windows.
+
+Around the card, include faint line art animations — subtle floating grids, circles, or drafting lines symbolizing architectural precision and emotional balance.
+
+At the bottom of the card, in a slightly smaller, handwritten-style font, write:
+
+“From Dublin, with all my love — A.”
+
+Make the section scrollable and responsive, with enough breathing room and soft transitions between paragraphs.
+
+Overall tone: dreamy, heartfelt, modern, and deeply personal — a love letter written by an architect in pixels and warmth.
