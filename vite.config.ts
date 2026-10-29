@@ -1,10 +1,29 @@
 import { defineConfig } from "vite";
+import { existsSync, readFileSync } from "node:fs";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
   plugins: [
+    {
+      name: "frozen-birthday-editions",
+      configureServer(server) {
+        server.middlewares.use((request, response, next) => {
+          const base = server.config.base.replace(/\/$/, "");
+          const pathname = request.url?.split("?")[0];
+          const match = pathname?.startsWith(`${base}/`)
+            ? /^\/(\d{4})\/$/.exec(pathname.slice(base.length))
+            : null;
+          if (!match) return next();
+
+          const index = path.resolve(import.meta.dirname, "client/public", match[1], "index.html");
+          if (!existsSync(index)) return next();
+          response.setHeader("Content-Type", "text/html; charset=utf-8");
+          response.end(readFileSync(index));
+        });
+      },
+    },
     react(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&

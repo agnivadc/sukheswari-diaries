@@ -5,9 +5,10 @@ import { Input } from "./ui/input";
 
 interface PasswordGateProps {
   onAuthenticated: () => void;
+  variant?: "classic" | "inline";
 }
 
-export default function PasswordGate({ onAuthenticated }: PasswordGateProps) {
+export default function PasswordGate({ onAuthenticated, variant = "classic" }: PasswordGateProps) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [shake, setShake] = useState(false);
@@ -25,6 +26,37 @@ export default function PasswordGate({ onAuthenticated }: PasswordGateProps) {
       setPassword("");
     }
   };
+
+  if (variant === "inline") {
+    return (
+      <form className="diary-unlock" onSubmit={handleSubmit}>
+        <label htmlFor="diary-password">A little secret, just for us.</label>
+        <div className="diary-unlock__fields">
+          <input
+            id="diary-password"
+            type="password"
+            placeholder="Our secret word"
+            autoComplete="current-password"
+            required
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+              setError(false);
+            }}
+            aria-invalid={error}
+            aria-describedby={error ? "diary-password-error" : undefined}
+            data-testid="password-input"
+          />
+          <button type="submit" data-testid="submit-password">
+            Open your letter <span aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+        <p id="diary-password-error" className="diary-unlock__error" aria-live="polite">
+          {error ? "Not quite our word. Try once more?" : "\u00a0"}
+        </p>
+      </form>
+    );
+  }
 
   return (
     <div

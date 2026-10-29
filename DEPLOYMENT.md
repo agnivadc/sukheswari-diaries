@@ -2,6 +2,48 @@
 
 This guide will help you deploy your "From Bumble to Forever" website to GitHub Pages for **completely free hosting**.
 
+## Birthday editions
+
+The homepage is the current birthday chapter. A shared header provides the
+year selector and an explicit return link from older birthdays. Selecting an
+archive opens `<site-base>/?year=<year>`: a viewer that keeps the header visible
+above an independent iframe containing the original edition. Its styles and
+scripts stay isolated from the current design.
+
+Frozen editions live in `client/public/<year>/`. Each contains its own HTML,
+JavaScript, CSS, photographs, and an `edition.json` recording the exact source
+commit and SHA-256 fingerprints of the built files. These folders are immutable:
+never rebuild them during a normal deployment, edit their contents, or replace
+them with imports from the current application. The original source remains
+available in Git at the recorded commit. Keep that Git history.
+
+Before replacing a year's homepage, commit its finished code and assets, then run:
+
+```bash
+npm run archive:birthday -- <year> <committed-revision>
+npm run archive:verify
+```
+
+The archive command builds from that committed tree, not the working directory,
+and refuses to overwrite an existing edition. It uses relative asset URLs and a
+deployment-only routing base so that the original application works both locally
+and under the GitHub Pages repository path. Previous archives are not nested
+inside a new archive. Commit the generated folder alongside the new chapter.
+
+Both production build commands verify the frozen files before building; GitHub
+Pages automatically copies them unchanged from `client/public/`. A frozen
+edition remains available at `<site-base>/<year>/` as the untouched standalone
+page; normal year navigation uses the viewer instead. Register each archived
+year in `client/src/lib/birthday-editions.ts`, with the newest archive first.
+The current edition suppresses its own header when embedded, and cross-year
+links target the top-level page, preventing duplicate headers or nested viewers
+when it is archived in a later year.
+
+For local development use `npm run dev`. The Vite configuration also serves the
+standalone archive entry pages without passing them through the current router.
+Use `npm run check`, `npm test`, and `npm run build:pages` before publishing.
+The existing client-side passcode remains a courtesy gate, not private hosting.
+
 ## ⚠️ Important Note About Password Protection
 
 The password protection ("pinky") is **client-side only**. On GitHub Pages (or any static hosting), anyone who views the source code can see and bypass the password. For true security, you would need server-side authentication, which isn't available on free static hosting.

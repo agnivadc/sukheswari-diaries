@@ -5,9 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "npm run archive:verify && vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build:pages": "npm run archive:verify && vite build",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
+    "test": "node --import tsx --test client/src/lib/*.test.ts",
+    "archive:birthday": "node scripts/archive-birthday.mjs",
+    "archive:verify": "node scripts/archive-birthday.mjs --verify",
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
