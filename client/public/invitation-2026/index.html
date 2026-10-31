@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Something for my Love | Sukheswari Diaries</title>
+    <meta name="description" content="For this birthday, and all the birthdays still to come. A little something made just for you." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#102620" />
+    <link rel="canonical" href="https://agnivadc.github.io/sukheswari-diaries/invitation-2026/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Something for my Love" />
+    <meta property="og:description" content="For this birthday, and all the birthdays still to come." />
+    <meta property="og:url" content="https://agnivadc.github.io/sukheswari-diaries/invitation-2026/" />
+    <meta property="og:image" content="https://agnivadc.github.io/sukheswari-diaries/invitation-2026/preview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="An evergreen and ivory card wishing Sukheswari a happy birthday." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Something for my Love" />
+    <meta name="twitter:description" content="For this birthday, and all the birthdays still to come." />
+    <meta name="twitter:image" content="https://agnivadc.github.io/sukheswari-diaries/invitation-2026/preview.jpg" />
+    <meta name="twitter:image:alt" content="An evergreen and ivory card wishing Sukheswari a happy birthday." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        min-height: 100svh;
+        margin: 0;
+        padding: clamp(16px, 3vw, 36px);
+        place-items: center;
+        background: #102620;
+        background-image: radial-gradient(ellipse at 50% 0%, rgb(196 207 173 / 9%), transparent 70%);
+        color: #102620;
+        font-family: "DM Sans", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::before {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: min(84vw, 1180px);
+        aspect-ratio: 1;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgb(196 207 173 / 10%);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+
+      .invitation {
+        position: relative;
+        width: min(100%, 560px);
+        padding: clamp(28px, 6vw, 56px);
+        border: 1px solid #e4e0d3;
+        border-radius: 3px;
+        background: #f0ede3;
+        box-shadow: 0 28px 100px rgb(0 0 0 / 24%);
+        text-align: center;
+        animation: arrive 600ms ease-out both;
+      }
+
+      .monogram {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: 48px;
+        font-style: italic;
+        line-height: 1;
+      }
+
+      .date {
+        margin: 18px 0 0;
+        color: #486055;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.17em;
+        line-height: 1.6;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 28px 0 24px;
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: clamp(44px, 12vw, 76px);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+        line-height: 1.02;
+      }
+
+      h1 em {
+        font-weight: 400;
+        white-space: nowrap;
+      }
+
+      .message {
+        margin: 0;
+        color: #486055;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .signature {
+        margin: 22px 0 0;
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: 25px;
+        font-style: italic;
+        line-height: 1.4;
+      }
+
+      .gift-link {
+        display: flex;
+        min-height: 54px;
+        margin-top: 30px;
+        padding: 16px 20px;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        border: 1px solid #102620;
+        border-radius: 2px;
+        background: #102620;
+        color: #f0ede3;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 180ms ease;
+      }
+
+      .gift-link:hover {
+        background: #244339;
+      }
+
+      .gift-link:focus-visible {
+        outline: 2px solid #102620;
+        outline-offset: 5px;
+      }
+
+      .gift-link svg {
+        flex-shrink: 0;
+        transition: transform 180ms ease;
+      }
+
+      .gift-link:hover svg {
+        transform: translateX(3px);
+      }
+
+      .note {
+        margin: 16px 0 0;
+        color: #486055;
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      @keyframes arrive {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .invitation {
+          animation: none;
+        }
+
+        .gift-link,
+        .gift-link svg {
+          transition: none;
+        }
+
+        .gift-link:hover svg {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="invitation" aria-labelledby="invitation-title">
+      <div class="monogram" aria-hidden="true">s.</div>
+      <p class="date"><time datetime="2026-11-02">02 November 2026</time></p>
+      <h1 id="invitation-title">Happy <br />birthday, <br /><em>Sukheswari.</em></h1>
+      <p class="message">For this birthday,<br />and all the birthdays still to come.</p>
+      <p class="signature">Tomar ekmatro porano</p>
+      <a class="gift-link" href="../?year=2026" target="_top">
+        <span>Something for my Love</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14m-5-5 5 5-5 5" />
+        </svg>
+      </a>
+      <p class="note">Made just for you.</p>
+    </main>
+  </body>
+</html>

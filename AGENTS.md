@@ -16,6 +16,8 @@ the current chapter.
   list archives newest first. Shared navigation belongs outside the archived
   document. Retain embedded-header suppression in new current chapters.
   Cross-year links must target `_top`, not nest viewers.
+- Preserve year-specific delivery invitations and their preview images.
+  An already-sent 2026 invitation must continue opening 2026, not the newest year.
 - Follow the [next-birthday playbook](README.md#next-birthday-playbook).
   Collect approved moments/photos, confirmed dates, letter notes, and design
   direction; do not invent personal details or automatically carry old content

@@ -7,6 +7,8 @@ chapter is **2026: "The year we got closer"**.[^editions][^viewer]
 
 **Live:** https://agnivadc.github.io/sukheswari-diaries/
 
+**2026 invitation:** https://agnivadc.github.io/sukheswari-diaries/invitation-2026/
+
 **For agents:** start with [AGENTS.md](AGENTS.md), then read this handoff.
 For the annual update, jump to the [next-birthday playbook](#next-birthday-playbook).
 
@@ -54,6 +56,12 @@ These are implemented in the [chapter](client/src/pages/Diary.tsx#L1-L436),
 [header](client/src/components/DiaryHeader.tsx#L75-L102).
 They document the approved 2026 experience, not a requirement to reuse its
 visual theme for every future birthday.
+
+The [digital invitation](client/public/invitation-2026/index.html) was added
+on 1 November 2026: a separate, photo-free evergreen/ivory card with the exact
+button text **"Something for my Love"**. It opens the 2026 chapter without
+replacing the homepage or adding another gate. See the
+[delivery-card notes](#digital-invitation-and-chat-preview).
 
 ## Technical guide
 
@@ -122,6 +130,7 @@ requests. Required checks, branch protection, and review enforcement are
 | `client/src/components/PasswordGate.tsx` | Courtesy secret-word gate; classic and current inline variants |
 | `client/src/lib/wedding-countdown.ts` | Fixed India-time target and pure countdown calculation |
 | `client/src/assets/2026/` | Published 2026 WebP assets |
+| `client/public/invitation-2026/` | Standalone delivery card and JPG link-preview image; stable, year-pinned URL |
 | `client/public/<year>/` | Checked-in immutable HTML/JS/CSS/assets plus `edition.json` |
 | `scripts/archive-birthday.mjs` | Committed-revision archive generator and fingerprint verifier |
 | `client/src/pages/Home.tsx`, older components, `attached_assets/` | Retained original-era source/assets; not the source of the running frozen 2025 build |
@@ -348,6 +357,25 @@ boundary and post-date behavior; do not replace the target with a browser-local
 date string. This is 2026-specific content, not a permanent countdown template
 for 2027.[^countdown][^tests]
 
+### Digital invitation and chat preview
+
+[`client/public/invitation-2026/index.html`](client/public/invitation-2026/index.html)
+is self-contained HTML/CSS, separate from the React application. Its real link
+uses `../?year=2026`, so the gift continues to select 2026 after a later chapter
+becomes the homepage. There is no photo, voice recording, PDF, or QR code.
+
+`preview.jpg` is a 1200 x 630 JPEG used by the page's Open Graph/Twitter metadata.
+It is a sharing asset, not a clickable image file. Chat-preview appearance
+depends on the messaging app and its cache; the invitation's actual button
+works independently of the preview. If the card design changes, update the JPG
+and its metadata together.
+
+Normal Pages builds copy this folder unchanged. The archive tool deliberately
+excludes public folders from each standalone chapter build, so an invitation
+is **not** nested inside a future `client/public/2026/` snapshot. Keep the
+year-specific invitation folder and preview image in the repository when adding
+later birthdays; never repoint an already-sent 2026 card to the newest year.
+
 ## Next-birthday playbook
 
 The agreed long-term plan is **one new birthday chapter per year, with every
@@ -393,6 +421,7 @@ do not include the separate root folder of raw originals.
    change the viewer chrome, but not the historical document inside it. Retain
    embedded-header suppression and top-level cross-year links in a new current
    page so it can also be archived safely the following year.
+   Preserve already-sent year-specific invitations and their matching-year links.
 6. Update this README and agent handoff with what shipped and the next open
    decisions. Do not silently introduce a redesign, backend, hosting migration,
    or dependency overhaul without approval.
@@ -432,6 +461,10 @@ then repeat the essential checks at the live HTTPS URL. See
 - Check unknown years show not-found, countdown boundaries if retained, and
   archive integrity. On production, confirm asset requests succeed and
   deployed archive bytes match the checked-in manifest, not just HTTP 200.
+- Check the invitation on narrow screens, keyboard focus, and reduced motion.
+  Its button must say "Something for my Love" and open `?year=2026`; its
+  preview-image URL must return the matching JPEG. Keep this check when adding
+  later years so the old invitation still selects its original chapter.
 
 ### Starter prompt for next year's agent
 
